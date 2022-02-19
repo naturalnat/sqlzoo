@@ -32,3 +32,8 @@ JOIN Level ON Staff.Level_code = Level.level_code
 WHERE Level.Manager = 'Y'
 
 --5. Show the manager for each shift. Your output should include the shift date and type; also the first and last name of the manager.
+SELECT Shift.shift_date, Shift.shift_type, Staff.first_name, Staff.Last_name 
+FROM Shift
+JOIN Staff
+ON Shift.Manager = Staff.Staff_code 
+ORDER BY Shift.shift_date
