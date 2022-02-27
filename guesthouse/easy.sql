@@ -34,3 +34,10 @@ FROM guest
 JOIN booking
 ON booking.guest_id = guest.id
 WHERE booking.room_no = 101 AND booking.booking_date = '2016-12-03';
+
+--5. ow many bookings, how many nights? For guests 1185 and 1270 show the number of bookings made and the total number nights. Your output should include the guest id and the total number of bookings and the total number of nights.
+SELECT
+	guest_id, COUNT(nights), SUM(nights)
+FROM booking
+WHERE guest_id = 1185 OR guest_id = 1270
+GROUP BY guest_id
