@@ -19,4 +19,18 @@ WHERE
 ORDER BY booking.arrival_time;
 
 --3. Look up daily rates. Give the daily rate that should be paid for bookings with ids 5152, 5165, 5154 and 5295. Include booking id, room type, number of occupants and the amount.
+SELECT	booking.booking_id, booking.room_type_requested, booking.occupants, rate.amount
+FROM booking
+JOIN rate
+ON booking.occupants = rate.occupancy AND booking.room_type_requested = rate.room_type
+WHERE
+booking.booking_id = 5152
+	OR booking.booking_id = 5154
+	OR booking.booking_id = 5295;
 
+--4. Who’s in 101? Find who is staying in room 101 on 2016-12-03, include first name, last name and address.
+SELECT guest.first_name, guest.last_name, guest.address
+FROM guest
+JOIN booking
+ON booking.guest_id = guest.id
+WHERE booking.room_no = 101 AND booking.booking_date = '2016-12-03';
