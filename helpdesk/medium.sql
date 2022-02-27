@@ -7,7 +7,7 @@ ON Customer.Company_ref = Caller.Company_ref
 JOIN Issue
 ON Caller.Caller_id = Issue.Caller_id
 GROUP BY Customer.Company_name 
-HAVING COUNT (*) > 18; --having always comes after group by 
+HAVING COUNT (*) > 18; 
 
 --7. Find the callers who have never made a call. Show first name and last name
 SELECT Caller.first_name, Caller.last_name 
