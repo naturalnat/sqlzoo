@@ -13,3 +13,11 @@ JOIN CustomerAddress
   JOIN Address
     ON CustomerAddress.AddressID = Address.AddressID
 WHERE Address.City = 'Dallas';
+
+-- 3. How many items with ListPrice more than $1000 have been sold?
+
+SELECT COUNT(*) AS count
+FROM SalesOrderDetail
+JOIN Product
+ON SalesOrderDetail.ProductID = Product.ProductID
+WHERE Product.ListPrice > 1000;
