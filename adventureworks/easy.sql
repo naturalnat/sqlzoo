@@ -21,3 +21,11 @@ FROM SalesOrderDetail
 JOIN Product
 ON SalesOrderDetail.ProductID = Product.ProductID
 WHERE Product.ListPrice > 1000;
+
+-- 4. 
+
+SELECT Customer.CompanyName
+FROM SalesOrderHeader
+JOIN Customer
+ON SalesOrderHeader.CustomerID = Customer.CustomerID
+WHERE SalesOrderHeader.SubTotal + SalesOrderHeader.TaxAmt + SalesOrderHeader.Freight > 100000;
