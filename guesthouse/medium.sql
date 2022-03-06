@@ -7,3 +7,4 @@ ON booking.occupants = rate.occupancy AND booking.room_type_requested = rate.roo
     JOIN guest
     ON guest.id = booking.guest_id
 WHERE guest.first_name = 'Ruth' AND guest.last_name = 'Cadbury' 
+
