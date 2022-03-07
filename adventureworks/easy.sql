@@ -33,7 +33,7 @@ WHERE SalesOrderHeader.SubTotal + SalesOrderHeader.TaxAmt + SalesOrderHeader.Fre
 
  --5. Find the number of left racing socks ('Racing Socks, L') ordered by CompanyName 'Riding Cycles'
 
- SELECT SUM(SalesOrderDetail.OrderQty) 
+SELECT SUM(SalesOrderDetail.OrderQty) 
 FROM SalesOrderDetail
 JOIN Product
 ON SalesOrderDetail.ProductID = Product.ProductID
